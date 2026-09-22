@@ -1,0 +1,6 @@
+src/pages/SatelliteDetection.tsx(4,3): error TS6133: 'CheckCircle2' is declared but its value is never read.
+src/pages/SatelliteDetection.tsx(11,3): error TS6133: 'ChevronRight' is declared but its value is never read.
+src/pages/SatelliteDetection.tsx(23,23): error TS6133: 'setSearchQuery' is declared but its value is never read.
+src/pages/SatelliteDetection.tsx(34,21): error TS6133: 'setDateRange' is declared but its value is never read.
+src/pages/SatelliteDetection.tsx(40,9): error TS6133: 'filteredImages' is declared but its value is never read.
+src/pages/SatelliteDetection.tsx(369,13): error TS2353: Object literal may only specify known properties, and 'justify' does not exist in type 'Properties<string | number, string & {}>'.

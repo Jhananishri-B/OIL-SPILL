@@ -1,0 +1,410 @@
+export interface SarSegmentedImage {
+  id: number;
+  spillNo: string;
+  date: string;
+  timeAmPm: string;
+  placeOfSpill: string;
+  severityLevel: 'CRITICAL' | 'HIGH' | 'SEVERE' | 'MODERATE' | 'LOW';
+  notifiedAlert: string;
+  title: string;
+  filename: string;
+  originalFilename: string;
+  path: string;
+  originalPath: string;
+  timestamp: string;
+  coordinates: {
+    lat: number;
+    lon: number;
+    formatted: string;
+  };
+  slickAreaKm2: number;
+  confidence: number;
+  sensor: string;
+  polarization: string;
+  orbitPass: string;
+  status: 'Flagged Anomaly' | 'High Risk Slick' | 'Verified Spill' | 'Monitored Region';
+  vesselSuspect?: string;
+  mmsi?: string;
+}
+
+export const SAR_SEGMENTED_IMAGES: SarSegmentedImage[] = [
+  {
+    id: 1,
+    spillNo: 'SPILL-01',
+    date: '22 Sep 2026',
+    timeAmPm: '04:15:32 PM',
+    placeOfSpill: 'Chennai Outer Anchorage (13.182° N, 80.314° E)',
+    severityLevel: 'CRITICAL',
+    notifiedAlert: 'ALERT #CG-101 (NOTIFIED)',
+    title: 'SAR Segmented Anomaly #01',
+    filename: 'sar_segmented_1.jpeg',
+    originalFilename: 'WhatsApp Image 2026-09-22 at 3.22.34 PM.jpeg',
+    path: '/sar-segmented/sar_segmented_1.jpeg',
+    originalPath: '/sar-segmented/WhatsApp%20Image%202026-09-22%20at%203.22.34%20PM.jpeg',
+    timestamp: '2026-09-22 16:15:32 UTC',
+    coordinates: { lat: 13.182, lon: 80.314, formatted: '13°10\'55.2"N 80°18\'50.4"E' },
+    slickAreaKm2: 12.8,
+    confidence: 94,
+    sensor: 'Sentinel-1A SAR',
+    polarization: 'VV + VH',
+    orbitPass: 'ASCENDING #41982',
+    status: 'High Risk Slick',
+    vesselSuspect: 'TANKER OCEAN VANGUARD',
+    mmsi: '563094820'
+  },
+  {
+    id: 2,
+    spillNo: 'SPILL-02',
+    date: '21 Sep 2026',
+    timeAmPm: '11:42:08 AM',
+    placeOfSpill: 'Ennore Port Outer Shipping Channel (13.245° N, 80.412° E)',
+    severityLevel: 'HIGH',
+    notifiedAlert: 'ALERT #PORT-EN-204 (SENT)',
+    title: 'SAR Segmented Anomaly #02',
+    filename: 'sar_segmented_2.jpeg',
+    originalFilename: 'WhatsApp Image 2026-09-22 at 3.22.49 PM.jpeg',
+    path: '/sar-segmented/sar_segmented_2.jpeg',
+    originalPath: '/sar-segmented/WhatsApp%20Image%202026-09-22%20at%203.22.49%20PM.jpeg',
+    timestamp: '2026-09-21 11:42:08 UTC',
+    coordinates: { lat: 13.245, lon: 80.412, formatted: '13°14\'42.0"N 80°24\'43.2"E' },
+    slickAreaKm2: 8.4,
+    confidence: 91,
+    sensor: 'Sentinel-1A SAR',
+    polarization: 'VV + VH',
+    orbitPass: 'ASCENDING #41970',
+    status: 'Verified Spill',
+    vesselSuspect: 'CARGO PACIFIC GLORY',
+    mmsi: '413298110'
+  },
+  {
+    id: 3,
+    spillNo: 'SPILL-03',
+    date: '20 Sep 2026',
+    timeAmPm: '08:05:44 PM',
+    placeOfSpill: 'Marina Beach Coastal Waters (13.104° N, 80.288° E)',
+    severityLevel: 'SEVERE',
+    notifiedAlert: 'ALERT #ICGS-044 (DISPATCHED)',
+    title: 'SAR Segmented Anomaly #03',
+    filename: 'sar_segmented_3.jpeg',
+    originalFilename: 'WhatsApp Image 2026-09-22 at 3.23.09 PM.jpeg',
+    path: '/sar-segmented/sar_segmented_3.jpeg',
+    originalPath: '/sar-segmented/WhatsApp%20Image%202026-09-22%20at%203.23.09%20PM.jpeg',
+    timestamp: '2026-09-20 20:05:44 UTC',
+    coordinates: { lat: 13.104, lon: 80.288, formatted: '13°06\'14.4"N 80°17\'16.8"E' },
+    slickAreaKm2: 15.2,
+    confidence: 96,
+    sensor: 'Sentinel-1B SAR',
+    polarization: 'VV + VH',
+    orbitPass: 'DESCENDING #38411',
+    status: 'Flagged Anomaly',
+    vesselSuspect: 'BULK ASIAN PIONEER',
+    mmsi: '352001920'
+  },
+  {
+    id: 4,
+    spillNo: 'SPILL-04',
+    date: '19 Sep 2026',
+    timeAmPm: '02:30:15 AM',
+    placeOfSpill: 'Pulicat Lake Estuary Approach (13.310° N, 80.520° E)',
+    severityLevel: 'CRITICAL',
+    notifiedAlert: 'ALERT #COAST-M-501 (NOTIFIED)',
+    title: 'SAR Segmented Anomaly #04',
+    filename: 'sar_segmented_4.jpeg',
+    originalFilename: 'WhatsApp Image 2026-09-22 at 3.23.34 PM.jpeg',
+    path: '/sar-segmented/sar_segmented_4.jpeg',
+    originalPath: '/sar-segmented/WhatsApp%20Image%202026-09-22%20at%203.23.34%20PM.jpeg',
+    timestamp: '2026-09-19 02:30:15 UTC',
+    coordinates: { lat: 13.310, lon: 80.520, formatted: '13°18\'36.0"N 80°31\'12.0"E' },
+    slickAreaKm2: 19.6,
+    confidence: 97,
+    sensor: 'Sentinel-1A SAR',
+    polarization: 'VV',
+    orbitPass: 'ASCENDING #41945',
+    status: 'Verified Spill',
+    vesselSuspect: 'UNKNOWN DISCHARGE VESSEL',
+    mmsi: '999120445'
+  },
+  {
+    id: 5,
+    spillNo: 'SPILL-05',
+    date: '18 Sep 2026',
+    timeAmPm: '05:18:50 PM',
+    placeOfSpill: 'Kattupalli Port Sector (13.080° N, 80.201° E)',
+    severityLevel: 'MODERATE',
+    notifiedAlert: 'ALERT #PORT-KAT-12 (ACKNOWLEDGED)',
+    title: 'SAR Segmented Anomaly #05',
+    filename: 'sar_segmented_5.jpeg',
+    originalFilename: 'WhatsApp Image 2026-09-22 at 3.23.49 PM.jpeg',
+    path: '/sar-segmented/sar_segmented_5.jpeg',
+    originalPath: '/sar-segmented/WhatsApp%20Image%202026-09-22%20at%203.23.49%20PM.jpeg',
+    timestamp: '2026-09-18 17:18:50 UTC',
+    coordinates: { lat: 13.080, lon: 80.201, formatted: '13°04\'48.0"N 80°12\'03.6"E' },
+    slickAreaKm2: 6.1,
+    confidence: 89,
+    sensor: 'Sentinel-1B SAR',
+    polarization: 'VH',
+    orbitPass: 'DESCENDING #38392',
+    status: 'Monitored Region',
+    vesselSuspect: 'TUG SEA HARBOR',
+    mmsi: '419120330'
+  },
+  {
+    id: 6,
+    spillNo: 'SPILL-06',
+    date: '16 Sep 2026',
+    timeAmPm: '10:22:11 AM',
+    placeOfSpill: 'Coromandel Deepwater Zone (13.199° N, 80.340° E)',
+    severityLevel: 'HIGH',
+    notifiedAlert: 'ALERT #CG-108 (NOTIFIED)',
+    title: 'SAR Segmented Anomaly #06',
+    filename: 'sar_segmented_6.jpeg',
+    originalFilename: 'WhatsApp Image 2026-09-22 at 3.28.39 PM.jpeg',
+    path: '/sar-segmented/sar_segmented_6.jpeg',
+    originalPath: '/sar-segmented/WhatsApp%20Image%202026-09-22%20at%203.28.39%20PM.jpeg',
+    timestamp: '2026-09-16 10:22:11 UTC',
+    coordinates: { lat: 13.199, lon: 80.340, formatted: '13°11\'56.4"N 80°20\'24.0"E' },
+    slickAreaKm2: 11.3,
+    confidence: 93,
+    sensor: 'Sentinel-1A SAR',
+    polarization: 'VV + VH',
+    orbitPass: 'ASCENDING #41910',
+    status: 'High Risk Slick',
+    vesselSuspect: 'CHEMICAL TANKER NEPTUNE',
+    mmsi: '636018221'
+  },
+  {
+    id: 7,
+    spillNo: 'SPILL-07',
+    date: '15 Sep 2026',
+    timeAmPm: '01:45:30 PM',
+    placeOfSpill: 'Nagapattinam Offshore Corridor (13.412° N, 80.601° E)',
+    severityLevel: 'CRITICAL',
+    notifiedAlert: 'ALERT #HQ-NAV-302 (URGENT)',
+    title: 'SAR Segmented Anomaly #07',
+    filename: 'sar_segmented_7.jpeg',
+    originalFilename: 'WhatsApp Image 2026-09-22 at 3.28.53 PM.jpeg',
+    path: '/sar-segmented/sar_segmented_7.jpeg',
+    originalPath: '/sar-segmented/WhatsApp%20Image%202026-09-22%20at%203.28.53%20PM.jpeg',
+    timestamp: '2026-09-15 13:45:30 UTC',
+    coordinates: { lat: 13.412, lon: 80.601, formatted: '13°24\'43.2"N 80°36\'03.6"E' },
+    slickAreaKm2: 14.7,
+    confidence: 95,
+    sensor: 'Sentinel-1A SAR',
+    polarization: 'VV + VH',
+    orbitPass: 'ASCENDING #41890',
+    status: 'Verified Spill',
+    vesselSuspect: 'CONTAINER MARINA STAR',
+    mmsi: '211384000'
+  },
+  {
+    id: 8,
+    spillNo: 'SPILL-08',
+    date: '13 Sep 2026',
+    timeAmPm: '07:12:05 AM',
+    placeOfSpill: 'Cuddalore Coastal Approach (13.015° N, 80.190° E)',
+    severityLevel: 'MODERATE',
+    notifiedAlert: 'ALERT #PORT-CUD-05 (SENT)',
+    title: 'SAR Segmented Anomaly #08',
+    filename: 'sar_segmented_8.jpeg',
+    originalFilename: 'WhatsApp Image 2026-09-22 at 3.29.05 PM.jpeg',
+    path: '/sar-segmented/sar_segmented_8.jpeg',
+    originalPath: '/sar-segmented/WhatsApp%20Image%202026-09-22%20at%203.29.05%20PM.jpeg',
+    timestamp: '2026-09-13 07:12:05 UTC',
+    coordinates: { lat: 13.015, lon: 80.190, formatted: '13°00\'54.0"N 80°11\'24.0"E' },
+    slickAreaKm2: 9.8,
+    confidence: 92,
+    sensor: 'Sentinel-1B SAR',
+    polarization: 'VV',
+    orbitPass: 'DESCENDING #38320',
+    status: 'Flagged Anomaly',
+    vesselSuspect: 'FISHING VESSEL SEA KING',
+    mmsi: '419888120'
+  },
+  {
+    id: 9,
+    spillNo: 'SPILL-09',
+    date: '11 Sep 2026',
+    timeAmPm: '09:50:42 PM',
+    placeOfSpill: 'Palk Strait International Channel (13.355° N, 80.488° E)',
+    severityLevel: 'CRITICAL',
+    notifiedAlert: 'ALERT #CG-201 (RESPONSE ACTIVE)',
+    title: 'SAR Segmented Anomaly #09',
+    filename: 'sar_segmented_9.jpeg',
+    originalFilename: 'WhatsApp Image 2026-09-22 at 3.29.22 PM.jpeg',
+    path: '/sar-segmented/sar_segmented_9.jpeg',
+    originalPath: '/sar-segmented/WhatsApp%20Image%202026-09-22%20at%203.29.22%20PM.jpeg',
+    timestamp: '2026-09-11 21:50:42 UTC',
+    coordinates: { lat: 13.355, lon: 80.488, formatted: '13°21\'18.0"N 80°29\'16.8"E' },
+    slickAreaKm2: 21.4,
+    confidence: 98,
+    sensor: 'Sentinel-1A SAR',
+    polarization: 'VV + VH',
+    orbitPass: 'ASCENDING #41830',
+    status: 'Verified Spill',
+    vesselSuspect: 'VLCC TITAN EXPRESS',
+    mmsi: '538006540'
+  },
+  {
+    id: 10,
+    spillNo: 'SPILL-10',
+    date: '09 Sep 2026',
+    timeAmPm: '03:04:18 PM',
+    placeOfSpill: 'Gulf of Mannar Ecological Zone (13.210° N, 80.375° E)',
+    severityLevel: 'HIGH',
+    notifiedAlert: 'ALERT #ENV-PROTECT-88 (NOTIFIED)',
+    title: 'SAR Segmented Anomaly #10',
+    filename: 'sar_segmented_10.jpeg',
+    originalFilename: 'WhatsApp Image 2026-09-22 at 3.29.40 PM.jpeg',
+    path: '/sar-segmented/sar_segmented_10.jpeg',
+    originalPath: '/sar-segmented/WhatsApp%20Image%202026-09-22%20at%203.29.40%20PM.jpeg',
+    timestamp: '2026-09-09 15:04:18 UTC',
+    coordinates: { lat: 13.210, lon: 80.375, formatted: '13°12\'36.0"N 80°22\'30.0"E' },
+    slickAreaKm2: 17.1,
+    confidence: 96,
+    sensor: 'Sentinel-1A SAR',
+    polarization: 'VV + VH',
+    orbitPass: 'ASCENDING #41800',
+    status: 'High Risk Slick',
+    vesselSuspect: 'CARGO OCEAN FORTUNE',
+    mmsi: '477215900'
+  },
+  {
+    id: 11,
+    spillNo: 'SPILL-11',
+    date: '07 Sep 2026',
+    timeAmPm: '06:33:55 AM',
+    placeOfSpill: 'Kakinada Offshore Rig Transit (13.150° N, 80.290° E)',
+    severityLevel: 'MODERATE',
+    notifiedAlert: 'ALERT #RIG-CONTROL-04 (SENT)',
+    title: 'SAR Segmented Anomaly #11',
+    filename: 'sar_segmented_11.jpeg',
+    originalFilename: 'WhatsApp Image 2026-09-22 at 3.32.02 PM.jpeg',
+    path: '/sar-segmented/sar_segmented_11.jpeg',
+    originalPath: '/sar-segmented/WhatsApp%20Image%202026-09-22%20at%203.32.02%20PM.jpeg',
+    timestamp: '2026-09-07 06:33:55 UTC',
+    coordinates: { lat: 13.150, lon: 80.290, formatted: '13°09\'00.0"N 80°17\'24.0"E' },
+    slickAreaKm2: 7.9,
+    confidence: 90,
+    sensor: 'Sentinel-1B SAR',
+    polarization: 'VH',
+    orbitPass: 'DESCENDING #38240',
+    status: 'Monitored Region',
+    vesselSuspect: 'SUPPLY SHIP APEX 2',
+    mmsi: '563110090'
+  },
+  {
+    id: 12,
+    spillNo: 'SPILL-12',
+    date: '05 Sep 2026',
+    timeAmPm: '12:15:20 PM',
+    placeOfSpill: 'Visakhapatnam Harbor Approach (13.280° N, 80.450° E)',
+    severityLevel: 'HIGH',
+    notifiedAlert: 'ALERT #PORT-VIZAG-91 (NOTIFIED)',
+    title: 'SAR Segmented Anomaly #12',
+    filename: 'sar_segmented_12.jpeg',
+    originalFilename: 'WhatsApp Image 2026-09-22 at 3.32.19 PM.jpeg',
+    path: '/sar-segmented/sar_segmented_12.jpeg',
+    originalPath: '/sar-segmented/WhatsApp%20Image%202026-09-22%20at%203.32.19%20PM.jpeg',
+    timestamp: '2026-09-05 12:15:20 UTC',
+    coordinates: { lat: 13.280, lon: 80.450, formatted: '13°16\'48.0"N 80°27\'00.0"E' },
+    slickAreaKm2: 10.5,
+    confidence: 92,
+    sensor: 'Sentinel-1A SAR',
+    polarization: 'VV + VH',
+    orbitPass: 'ASCENDING #41750',
+    status: 'Flagged Anomaly',
+    vesselSuspect: 'OIL TANKER INDUS',
+    mmsi: '419000871'
+  },
+  {
+    id: 13,
+    spillNo: 'SPILL-13',
+    date: '02 Sep 2026',
+    timeAmPm: '11:08:45 PM',
+    placeOfSpill: 'Krishnapatnam Outer Anchorage (13.390° N, 80.580° E)',
+    severityLevel: 'CRITICAL',
+    notifiedAlert: 'ALERT #CG-312 (DISPATCHED)',
+    title: 'SAR Segmented Anomaly #13',
+    filename: 'sar_segmented_13.jpeg',
+    originalFilename: 'WhatsApp Image 2026-09-22 at 3.32.30 PM.jpeg',
+    path: '/sar-segmented/sar_segmented_13.jpeg',
+    originalPath: '/sar-segmented/WhatsApp%20Image%202026-09-22%20at%203.32.30%20PM.jpeg',
+    timestamp: '2026-09-02 23:08:45 UTC',
+    coordinates: { lat: 13.390, lon: 80.580, formatted: '13°23\'24.0"N 80°34\'48.0"E' },
+    slickAreaKm2: 13.4,
+    confidence: 94,
+    sensor: 'Sentinel-1A SAR',
+    polarization: 'VV + VH',
+    orbitPass: 'ASCENDING #41710',
+    status: 'High Risk Slick',
+    vesselSuspect: 'BULK CARRIER GLOBAL LEADER',
+    mmsi: '371209000'
+  },
+  {
+    id: 14,
+    spillNo: 'SPILL-14',
+    date: '30 Aug 2026',
+    timeAmPm: '08:40:12 AM',
+    placeOfSpill: 'Pondicherry Offshore Channel (13.220° N, 80.390° E)',
+    severityLevel: 'SEVERE',
+    notifiedAlert: 'ALERT #COAST-POND-07 (NOTIFIED)',
+    title: 'SAR Segmented Anomaly #14',
+    filename: 'sar_segmented_14.jpeg',
+    originalFilename: 'WhatsApp Image 2026-09-22 at 3.32.42 PM.jpeg',
+    path: '/sar-segmented/sar_segmented_14.jpeg',
+    originalPath: '/sar-segmented/WhatsApp%20Image%202026-09-22%20at%203.32.42%20PM.jpeg',
+    timestamp: '2026-08-30 08:40:12 UTC',
+    coordinates: { lat: 13.220, lon: 80.390, formatted: '13°13\'12.0"N 80°23\'24.0"E' },
+    slickAreaKm2: 18.3,
+    confidence: 96,
+    sensor: 'Sentinel-1A SAR',
+    polarization: 'VV + VH',
+    orbitPass: 'ASCENDING #41670',
+    status: 'Verified Spill',
+    vesselSuspect: 'TANKER BLUE OCEAN',
+    mmsi: '636015522'
+  },
+  {
+    id: 15,
+    spillNo: 'SPILL-15',
+    date: '27 Aug 2026',
+    timeAmPm: '04:55:30 PM',
+    placeOfSpill: 'Coromandel Coastal Zone (13.165° N, 80.320° E)',
+    severityLevel: 'CRITICAL',
+    notifiedAlert: 'ALERT #HQ-DISPATCH-99 (ACTIVE)',
+    title: 'SAR Segmented Anomaly #15',
+    filename: 'sar_segmented_15.jpeg',
+    originalFilename: 'WhatsApp Image 2026-09-22 at 3.33.00 PM.jpeg',
+    path: '/sar-segmented/sar_segmented_15.jpeg',
+    originalPath: '/sar-segmented/WhatsApp%20Image%202026-09-22%20at%203.33.00%20PM.jpeg',
+    timestamp: '2026-08-27 16:55:30 UTC',
+    coordinates: { lat: 13.165, lon: 80.320, formatted: '13°09\'54.0"N 80°19\'12.0"E' },
+    slickAreaKm2: 16.0,
+    confidence: 95,
+    sensor: 'Sentinel-1A SAR',
+    polarization: 'VV + VH',
+    orbitPass: 'ASCENDING #41630',
+    status: 'Verified Spill',
+    vesselSuspect: 'CARGO SOLARIS',
+    mmsi: '538009123'
+  }
+];
+
+export function getSarImage(idOrIndex: number | string): SarSegmentedImage {
+  if (typeof idOrIndex === 'number') {
+    const idx = Math.max(1, Math.min(idOrIndex, SAR_SEGMENTED_IMAGES.length));
+    return SAR_SEGMENTED_IMAGES[idx - 1];
+  }
+  const found = SAR_SEGMENTED_IMAGES.find(
+    img => img.spillNo.toLowerCase() === idOrIndex.toLowerCase() ||
+           img.filename === idOrIndex ||
+           img.originalFilename === idOrIndex ||
+           img.title.toLowerCase().includes(idOrIndex.toLowerCase())
+  );
+  return found || SAR_SEGMENTED_IMAGES[0];
+}
+
+export function getSarImagePath(idOrIndex: number | string, useOriginal: boolean = false): string {
+  const img = getSarImage(idOrIndex);
+  return useOriginal ? img.originalPath : img.path;
+}
